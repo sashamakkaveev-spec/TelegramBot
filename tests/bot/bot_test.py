@@ -161,7 +161,7 @@ class TestWeatherBot(unittest.TestCase):
 
         self.weather_bot.handle_weather_message(self.mock_message)
 
-        # Проверяем, что открыт файл с облаком (для любой погоды кроме Clear)
+        # Проверяем, что открыт файл с облаком
         mock_open.assert_called_with('./image/cloud.png', 'rb')
         # Проверяем отправку фото
         self.mock_bot.send_photo.assert_called_once_with(12345, mock_file)
